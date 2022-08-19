@@ -92,8 +92,16 @@ Calm. There are two red holes on the right side.</i>"
     </template>
     <template #heading>Antar Ben Chadad</template>
 
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a target="_blank" href="https://vuejs.org/sponsor/">becoming a sponsor</a>.
+    He is one of the greatest arabic medieval poets. One of its poems was hung on the Kaaba to signify its great quality.
+    He was also the knigth protectro of his tribe and was famous for his courage.
+    "<i>Oh my dear,
+ask those who are witnesses,
+They will tell you that I am not afraid of war,
+But I flee at the hour of spoils.
+I though of you
+as the arrows fell,
+And the spearheads of my blood are soaked.
+So I wanted to kiss these swords,
+because they shone with the whiteness of your smiling mouth.</i>"
   </Poet>
 </template>
