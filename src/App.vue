@@ -8,7 +8,7 @@
       width="125"
       height="125"
     />
-    <div class="wrapper" id="signOut">
+    <div class="wrapper" v-if="!user">
       <div><SignIn msg="Poet ! Tell us who you are !" /></div>
       <label>email: </label><br />
       <input
@@ -22,7 +22,7 @@
       <button v-on:click="register()">Sign Up</button>
       <button v-on:click="login()">Sign In</button>
     </div>
-    <div class="hidden" id="addPoem">
+    <div v-else>
       <div><SignIn msg="Write your poem !" /></div>
       <h3>The poem remains private, until you make it public</h3>
       <label>Poem's title</label><br />
