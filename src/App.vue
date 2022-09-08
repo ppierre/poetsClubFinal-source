@@ -92,10 +92,7 @@ import FamousPoets from "./components/FamousPoets.vue";
 import { createClient } from "@supabase/supabase-js";
 import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/SupabaseAuthClient";
 
-const SUPABASE_URL = "https://gtjuxssfttqbvjybklhe.supabase.co";
-const SUPABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd0anV4c3NmdHRxYnZqeWJrbGhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjEwNjk2OTUsImV4cCI6MTk3NjY0NTY5NX0.PCOgg4ZuCUT_lnO52jx-n5VKu5iVOXLSb5AcKKngeew";
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+import { supabase, user } from "./supabase";
 
 var poemsList; //list of selected poems readabe by the current user
 var currentpoem; //the currentely displayed poem that the user consults
@@ -161,17 +158,15 @@ async function createPoem() {
   //P.S. the email of the author is automatically added since the email column is declarated
   //with a default value auth.email(). The user cannot associate its poem to another author !
   try {
-    const { data, error } = await supabase
-      .from("poems")
-      .insert([
-        {
-          hidden: this.hidden,
-          email: this.email,
-          title: this.title,
-          content: this.content,
-          illustrationurl: res,
-        },
-      ]);
+    const { data, error } = await supabase.from("poems").insert([
+      {
+        hidden: this.hidden,
+        email: this.email,
+        title: this.title,
+        content: this.content,
+        illustrationurl: res,
+      },
+    ]);
     if (error) throw error;
   } catch (error) {
     alert(error.error_description || error.meassage);
